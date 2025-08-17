@@ -1,0 +1,20 @@
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Build dirs
+/bin/
+/build/
+/target/
+
+# Logs e temporários
+*.log
+*.swp
+*~
