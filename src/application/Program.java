@@ -1,7 +1,5 @@
 package application;
 
-import boardgame.Board;
-import boardgame.Position;
 import chess.ChessException;
 import chess.ChessMatch;
 import chess.ChessPiece;
@@ -40,10 +38,18 @@ public class Program {
                 if (capturedPiece != null) {
                     captured.add(capturedPiece);
                 }
-            } catch (ChessException e) {
+
+                if (chessMatch.getPromoted() != null) {
+                    System.out.print("Enter piece for promotion (B/N/R/Q): ");
+                    String type = sc.nextLine();
+                    chessMatch.repalcePromotedPiece(type);
+                }
+            }
+            catch (ChessException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
-            } catch (InputMismatchException e) {
+            }
+            catch (InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }
